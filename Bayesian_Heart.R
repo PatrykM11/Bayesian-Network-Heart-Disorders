@@ -17,7 +17,7 @@ library(BiocManager)
 
 ################## HEART
 
-Dane<-read.csv("C:/Users/Patryk/Desktop/Semestr 6/Wnioskowanie w warunkach niepewnoœci/Projekt/Projekt/Statlog_Heart.csv")
+Dane<-read.csv("Statlog_Heart.csv")
 
 
 names(Dane)[names(Dane) == "chest_pain_type"] <- "Chest"
@@ -105,7 +105,7 @@ bn_hc_siecDys<-bn.fit(hc_siecDys,DaneDys)
 score(hc_siec,data=Dane)
 score(hc_siecDys,data=DaneDys,type="bic")
 
-##Siec hc  dla danych dyskretnych stworzona na wzór zwyklej
+##Siec hc  dla danych dyskretnych stworzona na wzÃ³r zwyklej
 
 hc_siecDys2<-hc_siecDys
 
@@ -128,7 +128,7 @@ score(hc_siecDys2,data=DaneDys,type="bic")
 
 
 pc_siec<-pc.stable(Dane)
-#Dodaje kierunki do ³uków
+#Dodaje kierunki do Â³ukÃ³w
 pc_siec<-set.arc(pc_siec, from="age", to="Press")
 pc_siec<-set.arc(pc_siec, from="Angina", to="Chest")
 
@@ -165,7 +165,7 @@ score(pc_siecDys2,data=DaneDys,type="bic")
 
 # iamb
 iamb_siec<-iamb(Dane)
-#Dodaje kierunki do ³uków, nie wiem czy mogê tak
+#Dodaje kierunki do Â³ukÃ³w, nie wiem czy mogÃª tak
 iamb_siec<-set.arc(iamb_siec, from="age", to="MaxRate")
 iamb_siec<-set.arc(iamb_siec, from="Vessels", to="class")
 
@@ -206,7 +206,7 @@ score(iamb_siecDys2,data=DaneDys,type="bic")
 
 gs_siec<-gs(Dane)
 
-##Dodaje kierunki do ³uków
+##Dodaje kierunki do Â³ukÃ³w
 gs_siec<-set.arc(gs_siec, from="Angina", to="Chest")
 
 gs_siecDys<-gs(DaneDys)
@@ -245,7 +245,7 @@ score(gs_siecDys2,data=DaneDys,type="bic")
 
 
 
-#NAJLEPSZA SIEÆ
+#NAJLEPSZA SIEÃ†
 graphviz.plot(hc_siecDys)
 
 
